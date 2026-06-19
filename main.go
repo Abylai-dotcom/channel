@@ -12,11 +12,10 @@ func sendGreeting(a chan string) {
 }
 
 // sub 2
+
 func squareWorker(f int, c chan int) {
 
-	fmt.Println(f * f)
-
-	c <- f
+	c <- f * f
 
 }
 
@@ -79,7 +78,8 @@ func main() {
 	d := make(chan int)
 
 	go squareWorker(9, d)
-	fmt.Println(d)
+
+	fmt.Println(<-d)
 
 	c := make(chan int)
 	go emitNumbers(c)
