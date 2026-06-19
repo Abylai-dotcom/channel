@@ -79,6 +79,7 @@ func main() {
 	d := make(chan int)
 
 	go squareWorker(9, d)
+	fmt.Println(d)
 
 	c := make(chan int)
 	go emitNumbers(c)
