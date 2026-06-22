@@ -19,20 +19,6 @@ func squareWorker(f int, c chan int) {
 
 }
 
-// sub 3
-func emitNumbers(c chan int) {
-	for {
-		c <- 1
-		c <- 2
-		c <- 3
-		c <- 4
-		c <- 5
-		close(c)
-		break
-	}
-
-}
-
 //sub 4
 
 func sumReader(c1 chan int) {
